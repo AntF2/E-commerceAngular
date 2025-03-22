@@ -1,0 +1,45 @@
+<form [formGroup]="searchOrderForm" class="search-form" (submit)="submitForm()">
+    <mat-form-field appearance="outline" class="search-input">
+        <mat-label>Introduce el ID de Seguimiento para buscar</mat-label>
+        <input matInput formControlName="trackingId">
+        <button mat-button matSuffix color="primary" [disabled]="searchOrderForm.invalid">
+            <mat-icon>search</mat-icon>
+        </button>
+        <mat-error *ngIf="searchOrderForm.get('trackingId').invalid">El ID de Seguimiento es obligatorio</mat-error>
+    </mat-form-field>
+</form>
+
+<!-- order-details.component.html -->
+<div class="order-details-container" *ngIf="order">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>Detalles del Pedido</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="order-detail">
+                ID de Seguimiento:
+                <strong>{{ order.trackingId }}</strong>
+            </div>
+            <div class="order-detail">
+                Nombre de Usuario:
+                <strong>{{ order.userName }}</strong>
+            </div>
+            <div class="order-detail">
+                Dirección:
+                <strong>{{ order.address }}</strong>
+            </div>
+            <div class="order-detail">
+                Monto:
+                <strong>{{ order.amount | currency }}</strong>
+            </div>
+            <div class="order-detail">
+                Estado:
+                <strong>{{ order.orderStatus }}</strong>
+            </div>
+            <div class="order-detail">
+                Fecha:
+                <strong>{{ order.date | date }}</strong>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>
