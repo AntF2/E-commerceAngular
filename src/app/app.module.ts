@@ -9,13 +9,19 @@ import { DemoAngularMaterailModule } from './DemoAngularMaterialModule';
 import { LoginComponent } from './auth/auth-components/login/login.component';
 import { SignupComponent } from './auth/auth-components/signup/signup.component';
 import { TrackOrderComponent } from './auth/auth-components/track-order/track-order.component';
+import { HomeComponent } from './auth/auth-components/home/home.component';
+import { AboutComponent } from './auth/auth-components/about/about.component';
+import { ContactComponent } from './auth/auth-components/contact/contact.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SignupComponent,
     LoginComponent,
-    TrackOrderComponent
+    TrackOrderComponent,
+    HomeComponent,
+    AboutComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
